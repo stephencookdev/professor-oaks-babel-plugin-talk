@@ -1,6 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { Presentation, Slide } from "zlides";
+import { present, Presentation, Slide } from "zlides";
 import { dratini } from "zlides/themes";
 
 const slides = {
@@ -12,13 +11,10 @@ const slides = {
   Slide2: () => <Slide>Test again</Slide>
 };
 
-ReactDOM.render(
-  <Presentation slides={slides} theme={dratini} />,
-  document.getElementById("mount")
+present(
+  <Presentation
+    title="Professor Oak's Guide to Babel Plugin Development"
+    slides={slides}
+    theme={dratini}
+  />
 );
-document.dispatchEvent(new Event("post-react-render"));
-
-console.log("Some dev shortcuts:");
-console.table({
-  "toggleDarkMode()": "Change code samples between light/dark mode"
-});
