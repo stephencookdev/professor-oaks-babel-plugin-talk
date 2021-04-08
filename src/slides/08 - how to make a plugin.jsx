@@ -3,7 +3,7 @@ import { Slide } from "zlides";
 
 export default () => (
   <Slide>
-    <h1>How to Make a Plugin</h1>
+    <h1>Gotta Transpile 'Em All</h1>
     <ul>
       <li>Overview of syntax etc.</li>
       <li>Demo how to do ;;p and ;;384</li>

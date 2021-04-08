@@ -1,6 +1,9 @@
 import React from "react";
 import { Slide, HighlightList, Step } from "zlides";
 
+import babelFish from "../assets/babel-fish.gif";
+import mewTwo from "../assets/mew-two.gif";
+
 export default () => (
   <Slide>
     <h1>What is Babel</h1>
@@ -15,11 +18,11 @@ export default () => (
 
       <div className="fixedImageContainer">
         <Step index={1} exact>
-          img
+          <img src={babelFish} />
         </Step>
 
         <Step index={2} exact>
-          img 2
+          <img src={mewTwo} />
         </Step>
       </div>
     </div>

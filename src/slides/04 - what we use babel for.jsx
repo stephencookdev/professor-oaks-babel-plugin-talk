@@ -16,11 +16,16 @@ export default () => (
 
       <div className="fixedImageContainer">
         <Step index={1} exact>
-          img
+          code sample of `myObject?.someProperty` converting to `myObject ?
+          myObject.someProperty : undefined`
         </Step>
 
         <Step index={2} exact>
-          img 2
+          code sample of JSX turning to React.createElement
+        </Step>
+
+        <Step index={3} exact>
+          code sample of types being pulled out
         </Step>
       </div>
     </div>
