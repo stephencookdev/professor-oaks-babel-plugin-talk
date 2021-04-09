@@ -1,5 +1,22 @@
 import React from "react";
 import { Slide, HighlightList, Step } from "zlides";
+import { CodeFromTo } from "../helpers/code";
+
+const safeGetExample = `const wisdom = trainer?.inventory?.helixFossil?.()`;
+const safeGetExampleTranspiled = `const wisdom = trainer
+  && trainer.inventory
+  && trainer.inventory.helixFossil
+  && trainer.inventory.helixFossil()`;
+
+const jsxExample = `<a href="bible.com">aaabaaajss</a>`;
+const jsxExampleTranspiled = `React.createElement(
+  'a',
+  { href: 'bible.com' },
+  'aaabaaajss',
+)`;
+
+const tsExample = `const pikachu: int = 25`;
+const tsExampleTranspiled = `const pikachu = 25`;
 
 export default () => (
   <Slide>
@@ -16,16 +33,39 @@ export default () => (
 
       <div className="fixedImageContainer">
         <Step index={1} exact>
-          code sample of `myObject?.someProperty` converting to `myObject ?
-          myObject.someProperty : undefined`
+          <CodeFromTo
+            from={{
+              value: safeGetExample,
+            }}
+            to={{
+              value: safeGetExampleTranspiled,
+            }}
+            codeMirrorOptions={{ mode: "javascript" }}
+          />
         </Step>
 
         <Step index={2} exact>
-          code sample of JSX turning to React.createElement
+          <CodeFromTo
+            from={{
+              value: jsxExample,
+            }}
+            to={{
+              value: jsxExampleTranspiled,
+            }}
+            codeMirrorOptions={{ mode: "jsx" }}
+          />
         </Step>
 
         <Step index={3} exact>
-          code sample of types being pulled out
+          <CodeFromTo
+            from={{
+              value: tsExample,
+            }}
+            to={{
+              value: tsExampleTranspiled,
+            }}
+            codeMirrorOptions={{ mode: "javascript" }}
+          />
         </Step>
       </div>
     </div>

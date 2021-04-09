@@ -1,6 +1,17 @@
 import React from "react";
 import { Slide, HighlightList, Step } from "zlides";
 
+import { CodeFromTo } from "../helpers/code";
+
+const pokeExample = `<div>
+  ;;384 is an ;;t:electric dragon god ;;p
+</div>`;
+const pokeExampleTranspiled = `<div>
+  Rayquaza is an
+  <a href="#">electric-type</a>
+  dragon god pokémon
+</div>`;
+
 import oakSad from "../assets/oak-sad.gif";
 import typing from "../assets/typing.gif";
 
@@ -27,7 +38,15 @@ export default () => (
         </Step>
 
         <Step index={4} exact>
-          code sample of desired plugin example
+          <CodeFromTo
+            from={{
+              value: pokeExample,
+            }}
+            to={{
+              value: pokeExampleTranspiled,
+            }}
+            codeMirrorOptions={{ mode: "jsx" }}
+          />
         </Step>
       </div>
     </div>

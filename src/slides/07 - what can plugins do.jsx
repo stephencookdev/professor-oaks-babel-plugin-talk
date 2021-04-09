@@ -2,6 +2,7 @@ import React from "react";
 import { HighlightList, Slide, Step } from "zlides";
 
 import mrMimeLimits from "../assets/mr-mime-limits.gif";
+import parseTransformGenerate from "../assets/parse-transform-generate.png";
 
 export default () => (
   <Slide>
@@ -22,11 +23,12 @@ export default () => (
         </Step>
 
         <Step index={2} exact>
-          diagram of transpilation stages
+          <img src={parseTransformGenerate} style={{ height: "75vh" }} />
         </Step>
 
-        <Step index={2} exact>
-          diagram highlghting AST transformation step
+        <Step index={3} exact>
+          <img src={parseTransformGenerate} style={{ height: "75vh" }} />
+          (highlight 'transform')
         </Step>
       </div>
     </div>

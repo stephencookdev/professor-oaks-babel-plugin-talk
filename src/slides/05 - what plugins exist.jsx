@@ -1,5 +1,17 @@
 import React from "react";
 import { HighlightList, Slide, Step } from "zlides";
+import { CodeFromTo } from "../helpers/code";
+
+const holesExample = `const sum = _ + _`;
+const holesExampleTranspiled = `const sum = (a, b) => a + b`;
+
+const partialExample = `const sum = (a, b) => a + b
+const add2 = sum(2, _)`;
+const partialExampleTranspiled = `const sum = (a, b) => a + b
+const add2 = a => sum(2, a)`;
+
+const consoleExample = `console.log('anarchy')`;
+const consoleExampleTranspiled = `console.log('falseProphet.js (3:8)', 'anarchy')`;
 
 export default () => (
   <Slide>
@@ -16,13 +28,37 @@ export default () => (
 
       <div className="fixedImageContainer">
         <Step index={1} exact>
-          code sample of `const sum = _ + _`
+          <CodeFromTo
+            from={{
+              value: holesExample,
+            }}
+            to={{
+              value: holesExampleTranspiled,
+            }}
+            codeMirrorOptions={{ mode: "javascript" }}
+          />
         </Step>
         <Step index={2} exact>
-          code sample of `const add2 = sum(2, _)`
+          <CodeFromTo
+            from={{
+              value: partialExample,
+            }}
+            to={{
+              value: partialExampleTranspiled,
+            }}
+            codeMirrorOptions={{ mode: "javascript" }}
+          />
         </Step>
         <Step index={3} exact>
-          code sample of `console.log(1)` getting file source included
+          <CodeFromTo
+            from={{
+              value: consoleExample,
+            }}
+            to={{
+              value: consoleExampleTranspiled,
+            }}
+            codeMirrorOptions={{ mode: "javascript" }}
+          />
         </Step>
       </div>
     </div>
