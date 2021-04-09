@@ -4,6 +4,7 @@ import { Slide, Step } from "zlides";
 export default () => (
   <Slide>
     <h1>Recap</h1>
+
     <ul>
       <li>Babel transpiles JS</li>
       <li>Plugins can modify AST step</li>

@@ -36,19 +36,19 @@ const renderApp = (target) => {
   ReactDOM.render(<App />, target);
 };
 
-if (window.singletonSandboxObserver) {
-  window.singletonSandboxObserver.disconnect();
+if (window.singletonSandboxObserverComplete) {
+  window.singletonSandboxObserverComplete.disconnect();
 }
 
-window.singletonSandboxObserver = new MutationObserver((_, me) => {
-  const target = document.getElementById("sandbox_app");
+window.singletonSandboxObserverComplete = new MutationObserver((_, me) => {
+  const target = document.getElementById("sandbox_app_complete");
   if (target) {
     renderApp(target);
     me.disconnect();
   }
 });
 
-window.singletonSandboxObserver.observe(document, {
+window.singletonSandboxObserverComplete.observe(document, {
   childList: true,
   subtree: true,
 });

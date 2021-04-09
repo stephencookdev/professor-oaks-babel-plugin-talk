@@ -1,4 +1,5 @@
 import { transformSync } from "./babel";
+import { pokeLookup } from "./utils";
 
 /**
  * The code we want to transform
@@ -11,6 +12,10 @@ const inputCode = `
 /**
  * Our custom Babel plugin
  */
+
+const pokeRegex = /;;([pP])/;
+const pokeNumberRegex = /;;([0-9]+)/;
+const pokeTypeRegex = /;;t:([a-z]+)/;
 
 const PokePlugin = function ({ types }) {
   const PokeVisitor = {};
@@ -25,10 +30,5 @@ const result = transformSync(inputCode, {
   presets: ["@babel/preset-react"],
   plugins: [PokePlugin],
 });
-
-console.log(`Output code:
---------
-${result.code}
---------`);
 
 export default result.code;
