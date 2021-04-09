@@ -11,7 +11,10 @@ const partialExampleTranspiled = `const sum = (a, b) => a + b
 const add2 = a => sum(2, a)`;
 
 const consoleExample = `console.log('anarchy')`;
-const consoleExampleTranspiled = `console.log('falseProphet.js (3:8)', 'anarchy')`;
+const consoleExampleTranspiled = `console.log(
+  'falseProphet.js (3:8)',
+  'anarchy',
+)`;
 
 export default () => (
   <Slide>

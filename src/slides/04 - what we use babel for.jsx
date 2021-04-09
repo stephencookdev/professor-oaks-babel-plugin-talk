@@ -2,7 +2,10 @@ import React from "react";
 import { Slide, HighlightList, Step } from "zlides";
 import { CodeFromTo } from "../helpers/code";
 
-const safeGetExample = `const wisdom = trainer?.inventory?.helixFossil?.()`;
+const safeGetExample = `const wisdom = trainer
+  ?.inventory
+  ?.helixFossil
+  ?.()`;
 const safeGetExampleTranspiled = `const wisdom = trainer
   && trainer.inventory
   && trainer.inventory.helixFossil

@@ -4,12 +4,12 @@ import { Slide, HighlightList, Step } from "zlides";
 import { CodeFromTo } from "../helpers/code";
 
 const pokeExample = `<div>
-  ;;384 is an ;;t:electric dragon god ;;p
+  ;;384 is an ;;t:electric dragon ;;p
 </div>`;
 const pokeExampleTranspiled = `<div>
   Rayquaza is an
   <a href="#">electric-type</a>
-  dragon god pokémon
+  dragon pokémon
 </div>`;
 
 import oakSad from "../assets/oak-sad.gif";
