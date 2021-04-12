@@ -10,11 +10,11 @@
     "husky": "^1.1.1",
     "lint-staged": "^7.3.0",
     "prettier": "^2.2.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "react-router-dom": "^4.3.1",
     "regenerator-runtime": "^0.13.7",
-    "zlides": "^1.5.1"
+    "zlides": "^1.6.0"
   },
   "files": [
     "dist/"

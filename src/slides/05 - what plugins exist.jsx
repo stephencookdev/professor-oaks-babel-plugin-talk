@@ -5,10 +5,11 @@ import { CodeFromTo } from "../helpers/code";
 const holesExample = `const sum = _ + _`;
 const holesExampleTranspiled = `const sum = (a, b) => a + b`;
 
-const partialExample = `const sum = (a, b) => a + b
-const add2 = sum(2, _)`;
-const partialExampleTranspiled = `const sum = (a, b) => a + b
-const add2 = a => sum(2, a)`;
+const functionComposition = `const bumpySin = Math.floor & Math.sin`;
+const functionCompositionTranspiled = `const bumpySin = (...args) =>
+  Math.sin(
+    Math.floor(...args)
+  )`;
 
 const consoleExample = `console.log('anarchy')`;
 const consoleExampleTranspiled = `console.log(
@@ -24,13 +25,13 @@ export default () => (
         <li>
           babel-plugin-
           <HighlightList
-            items={["holes", "partial-application", "console-source"]}
+            items={["holes", "function-composition", "console-source"]}
           />
         </li>
       </ul>
 
       <div className="fixedImageContainer">
-        <Step index={1} exact>
+        <Step step="1-" iterate>
           <CodeFromTo
             from={{
               value: holesExample,
@@ -40,19 +41,17 @@ export default () => (
             }}
             codeMirrorOptions={{ mode: "javascript" }}
           />
-        </Step>
-        <Step index={2} exact>
+
           <CodeFromTo
             from={{
-              value: partialExample,
+              value: functionComposition,
             }}
             to={{
-              value: partialExampleTranspiled,
+              value: functionCompositionTranspiled,
             }}
             codeMirrorOptions={{ mode: "javascript" }}
           />
-        </Step>
-        <Step index={3} exact>
+
           <CodeFromTo
             from={{
               value: consoleExample,

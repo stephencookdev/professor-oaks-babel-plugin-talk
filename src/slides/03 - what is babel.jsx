@@ -17,11 +17,8 @@ export default () => (
       />
 
       <div className="fixedImageContainer">
-        <Step index={1} exact>
+        <Step step="1-" iterate>
           <img src={babelFish} />
-        </Step>
-
-        <Step index={2} exact>
           <img src={mewTwo} />
         </Step>
       </div>

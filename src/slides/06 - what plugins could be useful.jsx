@@ -1,5 +1,5 @@
 import React from "react";
-import { Slide, HighlightList, Step } from "zlides";
+import { Slide, HighlightList, Step, Code } from "zlides";
 
 import { CodeFromTo } from "../helpers/code";
 
@@ -13,6 +13,7 @@ const pokeExampleTranspiled = `<div>
 </div>`;
 
 import oakSad from "../assets/oak-sad.gif";
+import contraption from "../assets/contraption.gif";
 import typing from "../assets/typing.gif";
 
 export default () => (
@@ -22,22 +23,25 @@ export default () => (
     <div className="centerWithHeader sidebyside">
       <HighlightList
         items={[
-          "Application-specific plugins",
           "Upkeep warning",
-          "A keystroke-saving example",
+          "Application-specific plugins",
+          { text: "A keystroke-saving example", count: 3 },
         ]}
       />
 
       <div className="fixedImageContainer">
-        <Step index={2} exact>
+        <Step step="1-" iterate>
           <img src={oakSad} />
-        </Step>
 
-        <Step index={3} exact>
+          <img src={contraption} />
+
           <img src={typing} />
-        </Step>
 
-        <Step index={4} exact>
+          <Code
+            value={pokeExampleTranspiled}
+            codeMirrorOptions={{ mode: "jsx" }}
+          />
+
           <CodeFromTo
             from={{
               value: pokeExample,

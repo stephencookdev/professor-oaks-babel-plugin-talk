@@ -8,7 +8,7 @@ export default () => (
     <ul>
       <li>Babel transpiles JS</li>
       <li>Plugins can modify AST step</li>
-      <Step index={1} exact>
+      <Step step={1}>
         <li>Rayquaza is a pain to type, and no-one has time for that</li>
       </Step>
     </ul>

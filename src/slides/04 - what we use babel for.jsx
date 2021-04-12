@@ -35,7 +35,7 @@ export default () => (
       />
 
       <div className="fixedImageContainer">
-        <Step index={1} exact>
+        <Step step="1-" iterate>
           <CodeFromTo
             from={{
               value: safeGetExample,
@@ -45,9 +45,7 @@ export default () => (
             }}
             codeMirrorOptions={{ mode: "javascript" }}
           />
-        </Step>
 
-        <Step index={2} exact>
           <CodeFromTo
             from={{
               value: jsxExample,
@@ -57,9 +55,7 @@ export default () => (
             }}
             codeMirrorOptions={{ mode: "jsx" }}
           />
-        </Step>
 
-        <Step index={3} exact>
           <CodeFromTo
             from={{
               value: tsExample,

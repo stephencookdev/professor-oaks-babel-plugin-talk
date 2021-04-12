@@ -4,11 +4,8 @@ import work from "../utils/work";
 
 export default () => (
   <Slide title>
-    <Step exact index={0}>
+    <Step iterate>
       <Social twitter="@StephenCookDev" />
-    </Step>
-
-    <Step exact index={1}>
       <Social work={work} />
     </Step>
   </Slide>
