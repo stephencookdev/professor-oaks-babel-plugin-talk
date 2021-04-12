@@ -1,6 +1,6 @@
 {
   "name": "@stephencookdev/professor-oaks-babel-plugin-talk",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "src/index.js",
   "devDependencies": {
@@ -21,7 +21,7 @@
   ],
   "scripts": {
     "dev": "zlides watch src/index.js",
-    "build": "NODE_ENV=production zlides build src/index.js",
+    "build": "PUBLIC_URL=/slides/professor-oaks-babel-plugin-talk NODE_ENV=production zlides build src/index.js",
     "clean": "rm -rf dist/",
     "prepublishOnly": "npm run clean && npm run build",
     "precommit": "lint-staged"
