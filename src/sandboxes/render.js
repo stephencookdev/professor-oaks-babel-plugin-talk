@@ -15,7 +15,9 @@ const App = () => (
     <div style={{ display: "flex" }}>
       <div style={{ width: "50%" }}>{main}</div>
 
-      <Code value={rawJsxString} codeMirrorOptions={{ mode: "javascript" }} />
+      <div style={{ zoom: 2 }}>
+        <Code value={rawJsxString} codeMirrorOptions={{ mode: "javascript" }} />
+      </div>
     </div>
     <style type="text/css">
       {`
